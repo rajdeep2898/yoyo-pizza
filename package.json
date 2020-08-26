@@ -5,10 +5,11 @@
   "main": "app.js",
   "scripts": {
     "client-install": "npm install --prefix projfrontend",
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "server": "nodemon app.js",
     "client": "npm start -prefix projfrontend",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build --prefix projfrontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix projfrontend && npm run build --prefix projfrontend"
   },
   "keywords": [],
   "author": "",
