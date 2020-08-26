@@ -37,7 +37,7 @@ const StripeCheckout = ({
   //   const headers = {
   //     "Content-Type": "application/json",
   //   };
-  //   return  fetch(`/stripepayment`, {
+  //   return  fetch(`/api/stripepayment`, {
   //     method: "POST",
   //     headers,
   //     body: JSON.stringify(body),
@@ -58,7 +58,7 @@ const StripeCheckout = ({
     const headers = {
       "Content-Type": "application/json",
     };
-    return fetch(`/stripepayment`, {
+    return fetch(`/api/stripepayment`, {
       method: "POST",
       headers,
       body: JSON.stringify(body),

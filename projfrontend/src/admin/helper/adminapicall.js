@@ -2,7 +2,7 @@ import { API } from "../../backend";
 
 //Category Calls
 export const createCategory = (userId, token, category) => {
-  return fetch(`/category/create/${userId}`, {
+  return fetch(`/api/category/create/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -19,7 +19,7 @@ export const createCategory = (userId, token, category) => {
 
 //Get all Categories
 export const getCategories = () => {
-  return fetch(`/categories`, {
+  return fetch(`/api/categories`, {
     method: "GET",
   })
     .then((response) => {
@@ -29,7 +29,7 @@ export const getCategories = () => {
 };
 // //get all categories
 // export const getCategories = () => {
-//   return  fetch(`/categories`, {
+//   return  fetch(`/api/categories`, {
 //     method: "GET",
 //   })
 //     .then((response) => {
@@ -40,7 +40,7 @@ export const getCategories = () => {
 //Products Calls
 
 export const createaProduct = (userId, token, product) => {
-  return fetch(`/product/create/${userId}`, {
+  return fetch(`/api/product/create/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -55,7 +55,7 @@ export const createaProduct = (userId, token, product) => {
 };
 
 // export const createaProduct = (userId, token, product) => {
-//   return  fetch(`/product/create/${userId}`, {
+//   return  fetch(`/api/product/create/${userId}`, {
 //     method: "POST",
 //     headers: {
 //       Accept: "application/json",
@@ -71,7 +71,7 @@ export const createaProduct = (userId, token, product) => {
 
 //Get all Products
 // export const getProducts = () => {
-//   return  fetch(`/products`, {
+//   return  fetch(`/api/products`, {
 //     method: "GET",
 //   })
 //     .then((response) => {
@@ -80,7 +80,7 @@ export const createaProduct = (userId, token, product) => {
 //     .catch((err) => console.log(err));
 // };
 export const getProducts = () => {
-  return fetch(`/products`, {
+  return fetch(`/api/products`, {
     method: "GET",
   })
     .then((response) => {
@@ -91,7 +91,7 @@ export const getProducts = () => {
 
 //delete a Profuct
 export const deleteProduct = (productId, userId, token) => {
-  return fetch(`/product/${productId}/${userId}`, {
+  return fetch(`/api/product/${productId}/${userId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -106,7 +106,7 @@ export const deleteProduct = (productId, userId, token) => {
 
 //get a Product
 export const getProduct = (productId) => {
-  return fetch(`/product/${productId}`, {
+  return fetch(`/api/product/${productId}`, {
     method: "GET",
   })
     .then((response) => {
@@ -117,7 +117,7 @@ export const getProduct = (productId) => {
 
 //Update a Product
 // export const updateProduct = (productId, userId, token, product) => {
-//   return  fetch(`/product/${productId}/${userId}`, {
+//   return  fetch(`/api/product/${productId}/${userId}`, {
 //     method: "PUT",
 //     headers: {
 //       Accept: "application/json",
@@ -131,7 +131,7 @@ export const getProduct = (productId) => {
 //     .catch((err) => console.log(err));
 // };
 export const updateProduct = (productId, userId, token, product) => {
-  return fetch(`/product/${productId}/${userId}`, {
+  return fetch(`/api/product/${productId}/${userId}`, {
     method: "PUT",
     headers: {
       Accept: "application/json",

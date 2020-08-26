@@ -1,7 +1,7 @@
 const { API } = require("../../backend");
 
 // export const signup = (user) => {
-//   return  fetch(`/signup`, {
+//   return  fetch(`/api/signup`, {
 //     method: "POST",
 //     headers: {
 //       Accept: "application/json",
@@ -15,7 +15,7 @@ const { API } = require("../../backend");
 //     .catch((err) => console.log(err));
 // };
 export const signup = (user) => {
-  return fetch(`/signup`, {
+  return fetch(`/api/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -29,7 +29,7 @@ export const signup = (user) => {
     .catch((err) => console.log(err));
 };
 export const signin = (user) => {
-  return fetch(`/signin`, {
+  return fetch(`/api/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -55,7 +55,7 @@ export const signout = (next) => {
     localStorage.removeItem("jwt");
     next();
   }
-  return fetch(`/signout`, {
+  return fetch(`/api/signout`, {
     method: "GET",
   })
     .then((response) => {
