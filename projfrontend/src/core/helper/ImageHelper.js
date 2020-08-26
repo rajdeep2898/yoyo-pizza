@@ -3,7 +3,7 @@ import { API } from "../../backend";
 
 const ImageHelper = ({ product }) => {
   const imageurl = product
-    ? `${API}/product/photo/${product._id}`
+    ? ` /product/photo/${product._id}`
     : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg";
   return (
     <div className="rounded border border-success p-2">

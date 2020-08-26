@@ -2,7 +2,7 @@ const { API } = require("../../backend");
 
 export const createOrder = (userId, token, orderData) => {
   console.log("CHECK FOR API FE", orderData);
-  return fetch(`${API}/order/create/${userId}`, {
+  return fetch(`/order/create/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
