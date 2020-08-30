@@ -17,14 +17,15 @@ const Base = ({
         </div>
         <div className={className}>{children}</div>
       </div>
-      <footer className="footer bg-dark mt-auto pt-3">
-        <div className="container-fluid bg-success text-white text-center">
-          <h4>Developed by Rajdeep</h4>
-          <button className="btn btn-warning btn-lg">Contact</button>
-        </div>
-        {/* <div className="container">
-          <span className="text-muted">Last modified @2020</span>
-        </div> */}
+      <footer className="footer bg-outline-info text-white mt-5 p-4 text-center">
+        <a
+          className="text-white p-2"
+          href="https://www.linkedin.com/in/rajdeep-datta-18716b16b/"
+          target="_blank"
+        >
+          <i className="fab fa-linkedin fa-lg" /> Made by Rajdeep{" "}
+        </a>
+        &copy; {new Date().getFullYear()} Yoyo Pizza
       </footer>
     </div>
   );

@@ -71,6 +71,22 @@ const PaymentB = ({ products, setReload = (f) => f, reload = undefined }) => {
     return amount;
   };
 
+  // const getFinalPriceCart = () => {
+  //   let amount = 0;
+  //   productsInCart.map((p) => {
+  //     amount += p.price;
+  //   });
+  //   return amount;
+  // };
+  const getDiscount = () => {
+    let amount = 0;
+    return amount;
+  };
+  const getPriceAfterDiscount = () => {
+    let amount = getFinalPrice() + getDiscount();
+    return amount;
+  };
+
   const onPurchase = () => {
     setInfo({ loading: true });
     let nonce;
@@ -104,7 +120,28 @@ const PaymentB = ({ products, setReload = (f) => f, reload = undefined }) => {
 
   return (
     <div>
-      <h3>test BT Price-{getFinalPrice()}</h3>
+      <div className="text-white">
+        <div className="card text-white bg-dark border border-info my-3 mx-3">
+          <div className="card-header">Total</div>
+          <div className="card-body">
+            <div className="row">
+              <div className="col-6">Items ({products.length})</div>
+              <div className="col-6">$ {getFinalPrice()}</div>
+            </div>
+            <div className="row">
+              <div className="col-6">Discount</div>
+              <div className="col-6">
+                -$<span id="total_discount">0</span>
+              </div>
+            </div>
+            <hr className="border border-white" />
+            <div className="row">
+              <div className="col-6">Order Total</div>
+              <div className="col-6">${getPriceAfterDiscount()}</div>
+            </div>
+          </div>
+        </div>
+      </div>
       {showbtDropIn()}
     </div>
   );

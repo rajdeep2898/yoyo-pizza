@@ -13,6 +13,9 @@ import AddProduct from "./admin/AddProduct";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
 import Cart from "./core/Cart";
+import UpdateCategory from "./admin/UpdateCategory";
+import ManageOrders from "./admin/ManageOrders";
+import PurchaseList from "./user/PurchaseList";
 
 const Routes = () => {
   return (
@@ -24,6 +27,8 @@ const Routes = () => {
         <Route path="/cart" exact component={Cart} />
 
         <PrivateRoute path="/user/dashboard" exact component={UserDashBoard} />
+        <PrivateRoute path="/user/orders" exact component={PurchaseList} />
+
         <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard} />
         <AdminRoute
           path="/admin/create/category"
@@ -37,12 +42,17 @@ const Routes = () => {
         />
         <AdminRoute path="/admin/create/product" exact component={AddProduct} />
         <AdminRoute path="/admin/products" exact component={ManageProducts} />
-        <AdminRoute path="/admin/orders" exact component={AdminDashBoard} />
         <AdminRoute
           path="/admin/product/update/:productId"
           exact
           component={UpdateProduct}
         />
+        <AdminRoute
+          path="/admin/category/update/:categoryId"
+          exact
+          component={UpdateCategory}
+        />
+        <AdminRoute path="/admin/orders" exact component={ManageOrders} />
       </Switch>
     </BrowserRouter>
   );

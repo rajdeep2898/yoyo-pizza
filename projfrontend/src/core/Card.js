@@ -21,7 +21,8 @@ const Card = ({
   // console.log(cartPrice);
   //   console.log(product.name);
   const addtoCart = () => {
-    addItemToCart(product, () => setRedirect(true));
+    // addItemToCart(product, () => setRedirect(false));
+    addItemToCart(product, () => {});
   };
 
   const getARedirect = (redirect) => {
@@ -34,7 +35,10 @@ const Card = ({
     return (
       addToCart && (
         <button
-          onClick={addtoCart}
+          onClick={() => {
+            addtoCart();
+            setReload(!reload);
+          }}
           className="btn btn-block btn-outline-success mt-2 mb-2"
         >
           Add to Cart

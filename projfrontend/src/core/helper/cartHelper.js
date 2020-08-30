@@ -25,11 +25,17 @@ export const removeItemFromCart = (productId) => {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
-    cart.map((product, i) => {
-      if (product._id === productId) {
+    // cart.map((product, i) => {
+    //   if (product._id === productId) {
+    //     cart.splice(i, 1);
+    //   }
+    // });
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i]._id === productId) {
         cart.splice(i, 1);
+        break;
       }
-    });
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
   }
   return cart;

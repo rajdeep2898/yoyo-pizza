@@ -17,21 +17,23 @@ export default function Cart() {
   const loadAllProducts = (products) => {
     return (
       <div>
-        <h2>Load all Products</h2>
-        {products.map((product, index) => {
-          return (
-            // <div key={index} className="col-4 mb-4">
-            <Card
-              key={index}
-              product={product}
-              addToCart={false}
-              removeFromCart={true}
-              setReload={setReload}
-              reload={reload}
-            />
-            // </div>
-          );
-        })}
+        <h2>Pizzas in Bag</h2>
+        <div className="row">
+          {products.map((product, index) => {
+            return (
+              <div key={index} className="col-6 mb-4">
+                <Card
+                  key={index}
+                  product={product}
+                  addToCart={false}
+                  removeFromCart={true}
+                  setReload={setReload}
+                  reload={reload}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
     //   getProducts().then((data) => {
@@ -61,12 +63,12 @@ export default function Cart() {
   }, [reload]);
   return (
     <Base title="Cart Page" description="Ready to checkout">
-      <div className="row text-center">
+      <div className="row text-center text-white">
         <div className="col-6">
           {products.length > 0 ? (
             loadAllProducts(products)
           ) : (
-            <h3 className="text-white">No Pizzas in cart</h3>
+            <h3 className="text-white">No Pizzas in bag</h3>
           )}
         </div>
         <div className="col-6">
@@ -74,7 +76,7 @@ export default function Cart() {
           {products.length > 0 ? (
             <PaymentB products={products} setReload={setReload} />
           ) : (
-            <h3 className="text-white">Get Pizzas in cart</h3>
+            <h3 className="text-white">Get Pizzas in bag</h3>
           )}
           {/* <PaymentB products={products} setReload={setReload} /> */}
         </div>

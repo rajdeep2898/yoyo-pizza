@@ -10,6 +10,7 @@ const {
   getAllOrders,
   getOrderStatus,
   updateStatus,
+  getOrdersList,
 } = require("../controllers/order");
 
 //Params
@@ -34,6 +35,7 @@ router.get(
   isAdmin,
   getAllOrders
 );
+router.get("/order/list/:userId", isSignedIn, isAuthenticated, getOrdersList);
 
 //Status
 

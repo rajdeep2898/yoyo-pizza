@@ -9,6 +9,7 @@ exports.getCategoryById = (req, res, next, id) => {
         error: "Category not found in DB",
       });
     }
+    // console.log("cate", cate);
     req.category = cate;
     next();
   });
@@ -38,10 +39,46 @@ exports.getAllCategory = (req, res) => {
     res.json(categories);
   });
 };
+// exports.updateProduct = (req, res) => {
+//   let form = new formidable.IncomingForm();
+//   form.keepExtensions = true;
+//   form.parse(req, (err, fields, file) => {
+//     if (err) {
+//       return res.status(400).json({
+//         error: "problem with image",
+//       });
+//     }
 
+//     let product = req.product;
+//     product = _.extend(product, fields);
+
+//     if (file.photo) {
+//       if (file.photo.size > 3000000) {
+//         return res.status(400).json({
+//           error: "File size too big!",
+//         });
+//       }
+//       product.photo.data = fs.readFileSync(file.photo.path);
+//       product.photo.contentType = file.photo.type;
+//     }
+//     product.save((err, product) => {
+//       if (err) {
+//         res.status(400).json({
+//           error: "Updation of product failed",
+//         });
+//       }
+//       res.json(product);
+//     });
+//   });
+// };
 exports.updateCategory = (req, res) => {
   const category = req.category;
   category.name = req.body.name;
+  const cname = category.name;
+  console.log("new Category", req.body.name);
+  console.log("Category object", category);
+  console.log("Category object1", cname);
+
   category.save((err, updatedCategory) => {
     if (err) {
       return res.status(400).json({
