@@ -114,7 +114,12 @@ const Signin = () => {
         </div>
         {signInForm()}
         {performRedirect()}
-        {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
+        <p className="text-white text-center">
+          Admin- Email-a1@gmail.com Pass-123456
+        </p>
+        <p className="text-white text-center">
+          User- Email-a2@gmail.com Pass-123456
+        </p>
       </Base>
     </div>
   );

@@ -142,6 +142,7 @@ const PaymentB = ({ products, setReload = (f) => f, reload = undefined }) => {
           </div>
         </div>
       </div>
+      <p className="text-white">Card No-4242 4242 4242 4242</p>
       {showbtDropIn()}
     </div>
   );
