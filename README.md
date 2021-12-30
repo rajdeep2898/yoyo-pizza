@@ -1,6 +1,6 @@
 # Yoyo-Pizza (Version 1.0.0)
 
-> E-commerce site for Buying Pizza
+> E-commerce site for Buying Pizza (Feature 2)
 
 This is a MERN stack application that is used to create a Full Stack Application.
 
