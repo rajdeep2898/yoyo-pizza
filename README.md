@@ -1,4 +1,4 @@
-# Yoyo-Pizza
+# Yoyo-Pizza (Version 1.0.0)
 
 > E-commerce site for Buying Pizza
 
